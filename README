@@ -1,57 +1,55 @@
-# PLP Week 6 Assignment: SQL Joins and Relationships
+# Week 6 Assignment: SQL Joins and Relationships
 
-## Student Information
-- **Student Name:** Angich
-- **Course:** Database Systems
-- **Cohort:** ILO Cohort - PLP Software Engineering Training
-- **Week:** 6
-- **Assignment:** SQL Joins and Relationships
+**Student Name:** Angich  
+**Course:** PLP Software Engineering Training  
+**Topic:** SQL Joins and Relationships  
+**Database:** Classic Models
 
 ## Project Description
-This project demonstrates how SQL JOIN operations combine information from related database tables.
 
-The project uses two tables:
-- `students` – stores student information.
-- `departments` – stores department information.
+This project demonstrates how to use SQL JOIN statements to retrieve related information from the Classic Models database.
 
-The tables are connected through the `department_id` field.
+## Assignment Tasks
 
-## Database Relationships
-The students table contains a foreign key that references the primary key in the departments table.
+### 1. INNER JOIN – Employees and Offices
+Combines the employees and offices tables using the officeCode column to retrieve employee details and office locations.
 
-This relationship connects each student to their department.
+### 2. LEFT JOIN – Products and ProductLines
+Combines the products and productlines tables using the productLine column to retrieve product information and product line descriptions.
 
-## SQL Concepts Demonstrated
-
-### 1. INNER JOIN
-Returns records that have matching values in both tables.
-
-### 2. LEFT JOIN
-Returns all records from the left table and matching records from the right table.
-
-### 3. RIGHT JOIN
-Returns all records from the right table and matching records from the left table.
-
-### 4. GROUP BY and COUNT
-Counts the number of students in each department.
+### 3. RIGHT JOIN – Customers and Orders
+Combines the customers and orders tables using the customerNumber column to retrieve customer and order information. The query uses LIMIT 10 to display the first ten orders.
 
 ## Project Files
-- `week6_joins.sql` – Contains the SQL table creation, sample data, and JOIN queries.
-- `README.md` – Explains the project and SQL concepts.
 
-## How to Run the Project
-1. Open the project in VS Code.
-2. Connect to your PostgreSQL database.
-3. Open `week6_joins.sql`.
+- `answer.sql` – Contains the three SQL JOIN queries.
+- `README.md` – Contains project documentation and assignment explanations.
+
+## Technologies Used
+
+- MySQL
+- SQL
+- GitHub Codespaces
+- GitHub
+
+## How to Run
+
+1. Open the project in VS Code Codespaces.
+2. Connect to the Classic Models MySQL database.
+3. Open `answer.sql`.
 4. Execute the SQL statements.
 5. Review the query results.
 
-## Expected Results
-The queries should demonstrate:
-- Matching student and department records.
-- All students and their departments using LEFT JOIN.
-- All departments and their students using RIGHT JOIN.
-- Student totals for each department.
+## Learning Outcomes
+
+- Understanding INNER JOIN.
+- Understanding LEFT JOIN.
+- Understanding RIGHT JOIN.
+- Connecting related database tables.
+- Retrieving information using SQL queries.
 
 ## Conclusion
-This assignment demonstrates the use of SQL JOIN operations and relationships to retrieve and analyze information from multiple related database tables.
+
+This assignment demonstrates practical knowledge of SQL joins and relationships using the Classic Models database.
+
+

@@ -1,58 +1,50 @@
 
--- PLP Week 6 Assignment: SQL Joins and Relationships
+-- =========================================
+-- PLP WEEK 6: SQL JOINS AND RELATIONSHIPS
+-- Database: Classic Models
+-- =========================================
 
--- Create database tables
-CREATE TABLE departments (
-    department_id INT PRIMARY KEY,
-    department_name VARCHAR(100)
-);
+-- QUERY 1: Employees and Offices
+-- INNER JOIN
 
-CREATE TABLE students (
-    student_id INT PRIMARY KEY,
-    student_name VARCHAR(100),
-    department_id INT,
-    FOREIGN KEY (department_id)
-        REFERENCES departments(department_id)
-);
+SELECT
+    e.employeeNumber,
+    e.firstName,
+    e.lastName,
+    e.email,
+    o.officeCode,
+    o.city,
+    o.country
+FROM employees AS e
+INNER JOIN offices AS o
+    ON e.officeCode = o.officeCode;
 
--- Insert departments
-INSERT INTO departments VALUES
-(1, 'Software Engineering'),
-(2, 'Data Analytics'),
-(3, 'Cybersecurity');
 
--- Insert students
-INSERT INTO students VALUES
-(101, 'Angich', 1),
-(102, 'Amina', 2),
-(103, 'Brian', 1),
-(104, 'Fatuma', 2);
+-- QUERY 2: Products and ProductLines
+-- LEFT JOIN
 
--- 1. INNER JOIN
-SELECT students.student_name,
-       departments.department_name
-FROM students
-INNER JOIN departments
-ON students.department_id = departments.department_id;
+SELECT
+    p.productCode,
+    p.productName,
+    p.productLine,
+    pl.textDescription
+FROM products AS p
+LEFT JOIN productlines AS pl
+    ON p.productLine = pl.productLine;
 
--- 2. LEFT JOIN
-SELECT students.student_name,
-       departments.department_name
-FROM students
-LEFT JOIN departments
-ON students.department_id = departments.department_id;
 
--- 3. RIGHT JOIN
-SELECT students.student_name,
-       departments.department_name
-FROM students
-RIGHT JOIN departments
-ON students.department_id = departments.department_id;
+-- QUERY 3: Customers and Orders
+-- RIGHT JOIN
+-- Display the first 10 orders
 
--- 4. Count students in each department
-SELECT departments.department_name,
-       COUNT(students.student_id) AS total_students
-FROM departments
-LEFT JOIN students
-ON departments.department_id = students.department_id
-GROUP BY departments.department_name;
+SELECT
+    c.customerNumber,
+    c.customerName,
+    o.orderNumber,
+    o.orderDate,
+    o.status
+FROM customers AS c
+RIGHT JOIN orders AS o
+    ON c.customerNumber = o.customerNumber
+LIMIT 10;
+
