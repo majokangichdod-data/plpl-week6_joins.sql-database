@@ -1,0 +1,57 @@
+# PLP Week 6 Assignment: SQL Joins and Relationships
+
+## Student Information
+- **Student Name:** Angich
+- **Course:** Database Systems
+- **Cohort:** ILO Cohort - PLP Software Engineering Training
+- **Week:** 6
+- **Assignment:** SQL Joins and Relationships
+
+## Project Description
+This project demonstrates how SQL JOIN operations combine information from related database tables.
+
+The project uses two tables:
+- `students` – stores student information.
+- `departments` – stores department information.
+
+The tables are connected through the `department_id` field.
+
+## Database Relationships
+The students table contains a foreign key that references the primary key in the departments table.
+
+This relationship connects each student to their department.
+
+## SQL Concepts Demonstrated
+
+### 1. INNER JOIN
+Returns records that have matching values in both tables.
+
+### 2. LEFT JOIN
+Returns all records from the left table and matching records from the right table.
+
+### 3. RIGHT JOIN
+Returns all records from the right table and matching records from the left table.
+
+### 4. GROUP BY and COUNT
+Counts the number of students in each department.
+
+## Project Files
+- `week6_joins.sql` – Contains the SQL table creation, sample data, and JOIN queries.
+- `README.md` – Explains the project and SQL concepts.
+
+## How to Run the Project
+1. Open the project in VS Code.
+2. Connect to your PostgreSQL database.
+3. Open `week6_joins.sql`.
+4. Execute the SQL statements.
+5. Review the query results.
+
+## Expected Results
+The queries should demonstrate:
+- Matching student and department records.
+- All students and their departments using LEFT JOIN.
+- All departments and their students using RIGHT JOIN.
+- Student totals for each department.
+
+## Conclusion
+This assignment demonstrates the use of SQL JOIN operations and relationships to retrieve and analyze information from multiple related database tables.
